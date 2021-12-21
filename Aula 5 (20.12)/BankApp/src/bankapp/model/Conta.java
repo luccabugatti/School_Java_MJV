@@ -1,9 +1,14 @@
 package bankapp.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Conta {
 	private double saldo;
     private int agencia;
     private double emprestimo;
     private String numeroConta;
+    private List<Historico> historicos = new ArrayList();
 
 	//+2 a 3 atributos relevantes para o negocio
 	public double getSaldo() {
@@ -31,5 +36,9 @@ public class Conta {
 
     public String getNumeroConta(){
         return numeroConta;
+    }
+
+    public List<Historico> getHistoricos(){
+        return historicos;
     }
 }

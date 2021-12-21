@@ -26,6 +26,8 @@ public class BankApplication {
 
 		terminal.transferir(contaLucca, contaJoana, 100.00);
 		terminal.transferir(contaTaty, contaGleyson, 60);
+
+		terminal.exibirExtrato(contaLucca);
 		
 		System.out.println(contaGleyson.getSaldo());
 		System.out.println(contaJose.getSaldo());

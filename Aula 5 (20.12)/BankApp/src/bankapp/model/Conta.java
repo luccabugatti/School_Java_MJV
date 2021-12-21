@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Conta {
 	private double saldo;
+    private String nomeCorrentista;
     private int agencia;
     private double emprestimo;
     private String numeroConta;
@@ -38,7 +39,20 @@ public class Conta {
         return numeroConta;
     }
 
+    public String getNomeCorrentista() {
+		return nomeCorrentista;
+	}
+
+	public void setNomeCorrentista(String nomeCorrentista) {
+		this.nomeCorrentista = nomeCorrentista;
+	}
+
     public List<Historico> getHistoricos(){
         return historicos;
     }
+
+    @Override
+	public String toString() {
+		return "Conta [nomeCorrentista=" + nomeCorrentista + ", numero=" + numeroConta + "]";
+	}
 }

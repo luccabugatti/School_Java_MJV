@@ -4,6 +4,7 @@ import java.util.List;
 
 import portifolio.model.Registro;
 import portifolio.util.LeitorRemessas;
+import portifolio.util.RegistrosPrint;
 
 public class App {
 
@@ -12,8 +13,10 @@ public class App {
 		
 		String caminho = "C:\\Users\\lbuga\\OneDrive\\Ambiente de Trabalho\\Java\\Teste.csv";
 		List<Registro> registros = leitor.converter(caminho);
+		
+		RegistrosPrint printer = new RegistrosPrint();
+		printer.imprimir(registros.get(0));
 
-		System.out.println(registros); 
 	}
 
 }

@@ -13,7 +13,6 @@ import portifolio.model.Estado;
 import portifolio.model.Registro;
 
 public class LeitorRemessas {
-	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 	
 	private List<String> ler(String caminhoArquivo) {
 		try {
@@ -27,6 +26,7 @@ public class LeitorRemessas {
     public List<Registro> converter (String caminhoArquivo) {
     	List<String> conteudos = ler(caminhoArquivo);
     	List<Registro> registros = new ArrayList<Registro>();
+    	DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		for(String linha:conteudos){
 			String [] campos = linha.split(";");
@@ -34,8 +34,7 @@ public class LeitorRemessas {
 				t.setProfissao(campos[0]);
 				t.setNomeCompleto(campos[1]);
 				t.setMinimoSalario(Double.valueOf(campos[2]));
-				t.setMaximoSalario(Double.valueOf(campos[3]));
-				DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+				t.setMaximoSalario(Double.valueOf(campos[3]));				
 				LocalDate dataFormatada = LocalDate.parse(campos[4], formato);
 				t.setDataNascimento(dataFormatada);
 				t.setCpf(campos[5]);

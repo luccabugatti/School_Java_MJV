@@ -1,13 +1,12 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-17e554bf429-6621aed46252ffb6": {
+		"mysql8-17e5a89c2f3-1d2cbaa9c4793e13": {
 			"provider": "mysql",
 			"driver": "mysql8",
 			"name": "localhost",
 			"save-password": true,
 			"read-only": false,
-			"virtual-model-id": "mysql8-17e31b874a6-6ccc357d633f7316",
 			"configuration": {
 				"host": "localhost",
 				"port": "3306",

@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Embeddable
 @Table(name = "tab_endereco")
 public class Endereco {
@@ -13,9 +16,7 @@ public class Endereco {
 	
 	@Column(length = 5, nullable = false)
 	private String numero;
-	
-	@Column(length = 50, nullable = false)
-	private String cidade;
+
 
 	public String getLogradouro() {
 		return logradouro;
@@ -32,13 +33,4 @@ public class Endereco {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-	
 }

@@ -1,5 +1,7 @@
 package mjv.easyjob.model;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -28,6 +30,10 @@ public class Cadastro {
 	private Sexo sexo;
 	
 	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride( name = "logradouro", column = @Column(name = "logradouro")),
+		@AttributeOverride( name = "numero", column = @Column(name = "numero")),
+	})
 	private Endereco endereco;
 	
 	@Column(length = 200, nullable = false)
@@ -76,5 +82,26 @@ public class Cadastro {
 	public void setProfissao(Profissao profissao) {
 		this.profissao = profissao;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Cadastro(Integer id, String nome, Sexo sexo, Endereco endereco, String email, Profissao profissao) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sexo = sexo;
+		this.endereco = endereco;
+		this.email = email;
+		this.profissao = profissao;
+	}
 	
+	public Cadastro() {
+		
+	}
 }

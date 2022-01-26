@@ -30,6 +30,9 @@ public class Cadastro {
 	@Embedded
 	private Endereco endereco;
 	
+	@Column(length = 200, nullable = false)
+	private String email;
+	
 	@ManyToOne
 	@JoinColumn(name = "profissao_id")
 	private Profissao profissao;
